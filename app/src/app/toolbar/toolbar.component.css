@@ -1,0 +1,9 @@
+.navigation-items {
+    padding: 0;
+    margin: 0;
+}
+
+.mat-toolbar {
+    padding-right: 50px;
+    padding-left: 50px;
+}
