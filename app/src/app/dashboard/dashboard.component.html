@@ -1,4 +1,4 @@
-<div class="post-cards-dashboard" fxLayout="row" fxLayoutAlign="space-around stretch" layout-wrap>
+<div class="post-cards-dashboard" fxLayoutAlign="start stretch" fxLayout="row wrap" fxLayoutGap>
     <mat-card class="post-card">
         <mat-card-header fxLayoutAlign="center center" fxLayout="column">
             <mat-card-title fxLayoutAlign="center center">47:35</mat-card-title>
@@ -30,10 +30,9 @@
             </button>
         </mat-card-actions>
     </mat-card>
-
-    <mat-card class="post-card" fxLayout="column">
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"
-            fxFlex="initial">
+    <mat-card class="post-card" fxLayout="column" *ngFor="let item of [1,2,3,4,5]">
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            alt="Photo of a Shiba Inu" fxFlex="initial">
         <mat-card-content class="post-card-content" fxFlex="auto">
             <p>
                 The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
