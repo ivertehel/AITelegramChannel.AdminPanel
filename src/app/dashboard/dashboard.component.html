@@ -4,25 +4,23 @@
             <mat-card-title fxLayoutAlign="center center">47:35</mat-card-title>
             <mat-card-subtitle class="post-card-subtitle" fxLayoutAlign="center center">This is the next
                 post</mat-card-subtitle>
-            <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
         </mat-card-header>
         <img class="post-card-image" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
             alt="Photo of a Shiba Inu">
         <mat-card-content class="post-card-content">
             <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
+                {{cardContent}}
             </p>
         </mat-card-content>
         <mat-card-actions fxLayoutAlign="center center">
             <button mat-mini-fab color="primary" class="post-card-icon-button" (click)="editPostCard()">
                 <mat-icon>edit</mat-icon>
             </button>
-            <button mat-mini-fab color="warn" class="post-card-icon-button">
+            <button mat-mini-fab color="warn" class="post-card-icon-button" (click)="deletePostCard()">
                 <mat-icon>delete</mat-icon>
             </button>
-            <button mat-mini-fab class="post-card-icon-button">
+            <button mat-mini-fab class="post-card-icon-button" (click)="publishPostCard()">
                 <mat-icon>publish</mat-icon>
             </button>
             <button mat-mini-fab color="primary" class="post-card-icon-button">
@@ -31,8 +29,8 @@
         </mat-card-actions>
     </mat-card>
     <mat-card class="post-card" fxLayout="column" *ngFor="let item of [1,2,3,4,5]">
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-            alt="Photo of a Shiba Inu" fxFlex="initial">
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"
+            fxFlex="initial">
         <mat-card-content class="post-card-content" fxFlex="auto">
             <p>
                 {{cardContent}}
@@ -42,7 +40,7 @@
             <button mat-mini-fab color="primary" class="post-card-icon-button" (click)="editPostCard()">
                 <mat-icon>edit</mat-icon>
             </button>
-            <button mat-mini-fab color="warn" class="post-card-icon-button">
+            <button mat-mini-fab color="warn" class="post-card-icon-button" (click)="deletePostCard()">
                 <mat-icon>delete</mat-icon>
             </button>
         </mat-card-actions>

@@ -5,7 +5,8 @@
         <div fxLayoutAlign="start center" fxLayout="column">
             <mat-card class="selected-card">
                 <h3 fxLayoutAlign="center center">Selected image:</h3>
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                <img mat-card-image
+                    [src]="!!uploadedImage ? uploadedImage : 'https://material.angular.io/assets/img/examples/shiba2.jpg'"
                     alt="Photo of a Shiba Inu">
             </mat-card>
 
@@ -17,8 +18,10 @@
                         (mouseleave)="onMouseOut(hoverName)" #hoverName class="available-image">
 
                 </mat-card>
+                <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput
+                    accept="image/png, image/jpeg">
                 <button type="button" mat-fab matTooltip="Accent" color="accent" class="upload-image-button"
-                    (click)="uploadImage()">
+                    (click)="fileInput.click()">
                     <mat-icon>add</mat-icon>
                 </button>
             </div>
@@ -32,6 +35,6 @@
 
     <mat-dialog-actions align="end">
         <button mat-button mat-dialog-close>Cancel</button>
-        <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial color="accent">Save</button>
     </mat-dialog-actions>
 </form>

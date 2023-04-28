@@ -9,13 +9,15 @@ import { MaterialModule } from './material.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { EditCardModalComponent } from './dashboard/edit-card-modal/edit-card-modal.component';
+import { YesCancelModalComponent } from './common/yes-cancel-modal/yes-cancel-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ToolbarComponent,
-    EditCardModalComponent
+    EditCardModalComponent,
+    YesCancelModalComponent
   ],
   imports: [
     BrowserModule,

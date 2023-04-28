@@ -9,8 +9,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class EditCardModalComponent {
   @Input() content: string = "";
 
+  uploadedImage: string = "";
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-    this.content =  data;
+    this.content = data;
   }
 
   selectImage(): void {
@@ -24,7 +26,16 @@ export class EditCardModalComponent {
     hoverName.style.border = "1px solid white";
   }
 
-  uploadImage() {
+  onFileChanged(event: any) {
+    const reader = new FileReader();
 
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+
+      reader.onload = () => {
+        this.uploadedImage = reader.result as string;
+      };
+    }
   }
 }
