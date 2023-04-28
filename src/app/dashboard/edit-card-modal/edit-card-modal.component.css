@@ -1,0 +1,26 @@
+.selected-card {
+    max-width: 400px;
+    margin: 10px;
+}
+
+.available-image-card {
+    max-width: 200px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.available-image {
+    border: 1px solid white;
+}
+
+.upload-image-button {
+    margin-left: 10px;
+}
+
+.post-content {
+    width: 100%;
+}
+
+.post-content-label {
+    color: white;
+}
