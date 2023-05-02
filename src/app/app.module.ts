@@ -10,6 +10,14 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { EditCardModalComponent } from './dashboard/edit-card-modal/edit-card-modal.component';
 import { YesCancelModalComponent } from './common/yes-cancel-modal/yes-cancel-modal.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ServiceProxyModule } from '../nswag/service-proxy.module';
+import { PublicationsService } from './dashboard/publications.service';
+import { API_BASE_URL } from 'src/nswag/service-proxies';
+
+export function getRemoteServiceBaseUrl(): string {
+  return "http://localhost:5055";
+}
 
 @NgModule({
   declarations: [
@@ -24,9 +32,14 @@ import { YesCancelModalComponent } from './common/yes-cancel-modal/yes-cancel-mo
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    ServiceProxyModule,
+    FlexLayoutModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PublicationsService,
+    { provide: API_BASE_URL, useFactory: getRemoteServiceBaseUrl }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
